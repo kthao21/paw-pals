@@ -14,10 +14,11 @@ const typeDefs = `
     category: Category
   }
 
-  type Order {
+  type Donate {
     _id: ID
-    purchaseDate: String
-    products: [Product]
+    donateDate: String
+    donateAmount: Float
+    donateMessage: String
   }
 
   type User {

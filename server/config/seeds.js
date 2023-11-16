@@ -8,11 +8,11 @@ db.once('open', async () => {
   await cleanDB('User', 'users');
 
   const categories = await Category.insertMany([
-    { name: 'Food' },
-    { name: 'Household Supplies' },
-    { name: 'Electronics' },
-    { name: 'Books' },
-    { name: 'Toys' }
+    { name: 'Dogs' },
+    { name: 'Cats' },
+    { name: 'Small Animals' },
+    { name: 'Birds' },
+    { name: 'Reptiles' }
   ]);
 
   console.log('categories seeded');
@@ -134,11 +134,6 @@ db.once('open', async () => {
     lastName: 'Washington',
     email: 'pamela@testmail.com',
     password: 'password12345',
-    orders: [
-      {
-        products: [products[0]._id, products[0]._id, products[1]._id]
-      }
-    ]
   });
 
   await User.create({
