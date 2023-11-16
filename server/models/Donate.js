@@ -3,16 +3,18 @@ const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const orderSchema = new Schema({
-  purchaseDate: {
+  donateDate: {
     type: Date,
     default: Date.now
   },
-  products: [
-    {
-      type: Schema.Types.ObjectId,
-      ref: 'Product'
-    }
-  ]
+  donateAmount: {
+    type: Number,
+    required: true
+  },
+  donateMessage: {
+    type: String,
+    required: true
+  }
 });
 
 const Order = mongoose.model('Order', orderSchema);
