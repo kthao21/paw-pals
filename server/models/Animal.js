@@ -8,18 +8,17 @@ const productSchema = new Schema({
     required: true,
     trim: true
   },
-  description: {
+  color: {
     type: String
   },
   image: {
     type: String
   },
-  price: {
-    type: Number,
-    required: true,
-    min: 0.99
+  gender: {
+    type: String,
+    required: true
   },
-  quantity: {
+  age: {
     type: Number,
     min: 0,
     default: 0
@@ -31,6 +30,6 @@ const productSchema = new Schema({
   }
 });
 
-const Product = mongoose.model('Product', productSchema);
+const Animal = mongoose.model('Animal', animalSchema);
 
-module.exports = Product;
+module.exports = Animal;

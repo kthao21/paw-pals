@@ -25,7 +25,12 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
+
+  //originally was orders but changing it to favorites
+  favorites: [Favorite.schema]
+
   Donations: [Donate.schema]
+
 });
 
 // set up pre-save middleware to create password
