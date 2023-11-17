@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useMutation } from '@apollo/client'; // 
 
 // Replace with actual mutation
-// import { SEND_CONTACT_MESSAGE } from '../utils/mutations';
+import { SEND_CONTACT_MESSAGE } from '../utils/mutations';
 
 const Contact = () => {
   const [contactState, setContactState] = useState({
@@ -11,8 +11,8 @@ const Contact = () => {
     message: ''
   });
 
-  // This is a placeholder. Replace with actual mutation call
-  // const [sendContactMessage, { error }] = useMutation(SEND_CONTACT_MESSAGE);
+  // Placeholder. Replace with actual mutation call
+  const [sendContactMessage, { error }] = useMutation(SEND_CONTACT_MESSAGE);
 
   const handleInputChange = (event) => {
     const { name, value } = event.target;
@@ -25,7 +25,7 @@ const Contact = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     // call the mutation or send the message to backend/email service
-    // Example: await sendContactMessage({ variables: { ...contactState } });
+    // Replace with actual mutation call
     console.log('Contact message sent:', contactState);
   };
 
@@ -66,8 +66,8 @@ const Contact = () => {
             onChange={handleInputChange}
           />
         </div>
-        {/* Uncomment if using Apollo mutation */}
-        {/* {error && <p className="error-text">Error sending message</p>} */}
+        {/* error */}
+        {error && <p className="error-text">Error sending message</p>}
         <div className="flex-row flex-end">
           <button type="submit">Send Message</button>
         </div>
