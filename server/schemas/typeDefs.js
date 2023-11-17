@@ -4,13 +4,13 @@ const typeDefs = `
     name: String
   }
 
-  type Product {
+  type Animal {
     _id: ID
     name: String
-    description: String
+    color: String
     image: String
-    quantity: Int
-    price: Float
+    gender: String
+    age: Float
     category: Category
   }
 
@@ -26,7 +26,7 @@ const typeDefs = `
     firstName: String
     lastName: String
     email: String
-    orders: [Order]
+    favorites: [Favorite]
   }
 
   type Checkout {
