@@ -10,6 +10,8 @@ const typeDefs = `
     color: String
     image: String
     gender: String
+    breed: String 
+    size: String 
     age: Float
     category: Category
   }
