@@ -26,8 +26,12 @@ function PetSearch() {
         let apiResult = null;
 
         apiResult = await client.animal.search({
-          type: "Dog",
+          type: "Your desired type of pet",
           location: postalCode,
+          breed: "Your desired breed",
+          size: "Your desired size",
+          age: "Your desired age",
+          color: "Your desired color", 
           page,
           limit: 100,
         });
