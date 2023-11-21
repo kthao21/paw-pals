@@ -4,12 +4,12 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
-import Detail from './pages/Detail';
-import NoMatch from './pages/NoMatch';
+import Application from './pages/Application';
+import Donation from './pages/Donation';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Success from './pages/Success';
-import OrderHistory from './pages/OrderHistory';
+import Contact from './pages/Contact';
+import SavedSearches from './pages/SavedSearches';
 
 const router = createBrowserRouter([
   {
@@ -27,14 +27,17 @@ const router = createBrowserRouter([
         path: '/signup',
         element: <Signup />
       }, {
-        path: '/success',
-        element: <Success />
+        path: '/application',
+        element: <Application />
       }, {
-        path: '/orderHistory',
-        element: <OrderHistory />
+        path: '/contact',
+        element: <Contact />
       }, {
-        path: '/products/:id',
-        element: <Detail />
+        path: '/donation',
+        element: <Donation />
+      },  {
+        path: '/savedSearches',
+        element: <SavedSearches />
       }
     ]
   }
