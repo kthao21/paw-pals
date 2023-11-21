@@ -2,10 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Donate = mongoose.model('Donate', new Schema({
-  amount: Number,
-  date: Date,
-})); 
+
 
 const userSchema = new Schema({
   firstName: {
@@ -28,10 +25,6 @@ const userSchema = new Schema({
     required: true,
     minlength: 5
   },
-
-  //originally was orders but changing it to favorites
-
-  Donations: { type: [Donate.schema], required: true }
 });
 
 // set up pre-save middleware to create password
