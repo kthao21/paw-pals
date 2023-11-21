@@ -1,5 +1,6 @@
 import Auth from "../../utils/auth";
 import { Link } from "react-router-dom";
+import logo from '../../assets/images/pawpals.png';
 
 function Nav() {
 
@@ -8,9 +9,6 @@ function Nav() {
       return (
         <ul className="flex-row">
           <li className="mx-1">
-            <Link to="/orderHistory">
-              Order History
-            </Link>
           </li>
           <li className="mx-1">
             {/* this is not using the Link component to logout or user and then refresh the application to the start */}
@@ -33,6 +31,16 @@ function Nav() {
               Login
             </Link>
           </li>
+          <li className="mx-1">
+            <Link to="/contact">
+              Contact
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/donation">
+              Donate
+            </Link>
+          </li>
         </ul>
       );
     }
@@ -42,8 +50,8 @@ function Nav() {
     <header className="flex-row px-1">
       <h1>
         <Link to="/">
-          <span role="img" aria-label="shopping bag">🛍️</span>
-          -Shop-Shop
+          <span role="img" aria-label="PAW PALS"></span>
+          <img src={logo} className="pawpals"/>
         </Link>
       </h1>
 
