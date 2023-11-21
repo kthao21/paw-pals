@@ -4,18 +4,17 @@ import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
 import App from './App.jsx';
 import Home from './pages/Home';
-import Application from './pages/Application';
-import Donation from './pages/Donation';
+// import Donation from './pages/Donation';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
-import Contact from './pages/Contact';
-import SavedSearches from './pages/SavedSearches';
+// import Contact from './pages/Contact';
+// import SavedSearches from './pages/SavedSearches';
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <App />,
-    error: <NoMatch />,
+    // error: <NoMatch />,
     children: [
       {
         index: true, 
@@ -26,19 +25,19 @@ const router = createBrowserRouter([
       }, {
         path: '/signup',
         element: <Signup />
-      }, {
-        path: '/application',
-        element: <Application />
-      }, {
-        path: '/contact',
-        element: <Contact />
-      }, {
-        path: '/donation',
-        element: <Donation />
-      },  {
-        path: '/savedSearches',
-        element: <SavedSearches />
-      }
+      }, 
+      // {
+      //   path: '/contact',
+      //   element: <Contact />
+      // }, 
+      // {
+      //   path: '/donation',
+      //   element: <Donation />
+      // },  
+      // {
+      //   path: '/savedSearches',
+      //   element: <SavedSearches />
+      // }
     ]
   }
 ]);
