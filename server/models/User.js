@@ -2,7 +2,10 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 const bcrypt = require('bcrypt');
-const Donate = require('./Donate');
+const Donate = mongoose.model('Donate', new Schema({
+  amount: Number,
+  date: Date,
+})); 
 
 const userSchema = new Schema({
   firstName: {
@@ -27,9 +30,10 @@ const userSchema = new Schema({
   },
 
   //originally was orders but changing it to favorites
-  favorites: [Favorite.schema]
+  favorites: [Favorite.schema], 
 
-  Donations: [Donate.schema]
+  Donations: { type: [Donate.schema], required: true }
+
 
 });
 
