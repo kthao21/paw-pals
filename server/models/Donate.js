@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { Schema } = mongoose;
 
-const orderSchema = new Schema({
+const donateSchema = new Schema({
   donateDate: {
     type: Date,
     default: Date.now
@@ -17,6 +17,6 @@ const orderSchema = new Schema({
   }
 });
 
-const Order = mongoose.model('Order', orderSchema);
+const Donate = mongoose.model('Donate', donateSchema);
 
-module.exports = Order;
+module.exports = Donate;

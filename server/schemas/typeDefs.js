@@ -28,7 +28,6 @@ const typeDefs = `
     firstName: String
     lastName: String
     email: String
-    favorites: [Favorite]
   }
 
   type Checkout {
@@ -42,18 +41,14 @@ const typeDefs = `
 
   type Query {
     categories: [Category]
-    products(category: ID, name: String): [Product]
-    product(_id: ID!): Product
     user: User
-    order(_id: ID!): Order
-    checkout(products: [ID]!): Checkout
+    checkout(donate: [ID]!): Checkout
+    donation(_id: ID!): Donate
   }
 
   type Mutation {
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
-    addOrder(products: [ID]!): Order
     updateUser(firstName: String, lastName: String, email: String, password: String): User
-    updateProduct(_id: ID!, quantity: Int!): Product
     login(email: String!, password: String!): Auth
   }
 `;
