@@ -46,7 +46,7 @@ function PetSearch() {
         // });
       }
 
-      showAnimalsByPostalCode(98370, 1);
+      //showAnimalsByPostalCode(96150, 1);
     }
   }, [client]);
 
