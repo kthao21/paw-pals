@@ -16,6 +16,21 @@ function Nav() {
               Logout
             </a>
           </li>
+          <li className="mx-1">
+            <Link to="/contact">
+              Contact
+            </Link>
+          </li>
+          <li className="mx-1">
+            <Link to="/donation">
+              Donate
+            </Link>
+          </li>
+            <li className="mx-1">
+            <Link to="/savedSearches">
+              Favorites
+            </Link>
+          </li>
         </ul>
       );
     } else {

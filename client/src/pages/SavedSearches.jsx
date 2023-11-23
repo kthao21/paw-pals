@@ -5,11 +5,11 @@ import { useQuery } from '@apollo/client';
 const SavedSearches = () => {
     return (
         <div className="container">
-            <h2>Saved Searches</h2>
+            <h2>Favorites</h2>
             <div className="flex-row">
                 <div className="col-12 mb-3">
                     <h3 className="bg-dark text-secondary p-3 display-inline-block">
-                        Saved Searches
+                        
                     </h3>
                 </div>
             </div>
