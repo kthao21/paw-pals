@@ -11,6 +11,21 @@ export const LOGIN = gql`
   }
 `;
 
+export const PROCESS_DONATION = gql`
+  mutation processDonation($amount: Int!) {
+    processDonation(amount: $amount) {
+      _id
+      firstName
+      lastName
+      email
+      donations {
+        _id
+        amount
+      }
+    }
+}
+`;
+
 export const ADD_USER = gql`
   mutation addUser(
     $firstName: String!
@@ -30,4 +45,15 @@ export const ADD_USER = gql`
       }
     }
   }
+`;
+
+export const SEND_CONTACT_MESSAGE = gql`
+mutation sendContactMessage($name: String!, $email: String!, $message: String!) {
+  sendContactMessage(name: $name, email: $email, message: $message) {
+    _id
+    name
+    email
+    message
+  }
+}
 `;
