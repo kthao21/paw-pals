@@ -223,3 +223,18 @@ input:focus {
 ul {
   list-style-type: none;
 }
+
+.display {
+  background-color: var(--secondary);
+  color: black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.favorites {
+  color: var(--dark);
+  background-color: var(--light);
+  border-radius: 100px;
+  margin: 3px;
+}
