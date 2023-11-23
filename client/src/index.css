@@ -1,9 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Wix+Madefor+Display&display=swap');
+
+
 :root {
-  --primary: #232F3E;
-  --secondary: #F3A847;
+  --primary: #4E4F50;
+  --secondary: #647C90;
   --tertiary: #B12704;
-  --light: #fafafa;
-  --dark: #272f32;
+  --light: #E2DED0;
+  --dark: #746C70;
   --error: rgb(228, 46, 1);
   --spacing-one: calc(1rem * 0.5);
   --spacing-two: calc(1rem);
@@ -34,7 +37,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Rubik', sans-serif;
   font-weight: 500;
   margin: 5px 0;
   line-height: 1.25;
@@ -207,4 +209,32 @@ input:focus {
   .card {
     width: 100%;
   }
+}
+
+.pawpals {
+  height: 200px;
+  border-radius: 100px;
+}
+
+* {
+  font-family: 'Wix Madefor Display', sans-serif;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.display {
+  background-color: var(--secondary);
+  color: black;
+  border-radius: 10px;
+  margin: 10px;
+  padding: 10px;
+}
+
+.favorites {
+  color: var(--dark);
+  background-color: var(--light);
+  border-radius: 100px;
+  margin: 3px;
 }
