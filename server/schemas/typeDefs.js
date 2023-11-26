@@ -23,6 +23,12 @@ const typeDefs = `
     donateMessage: String
   }
 
+  type Shelter {
+    id: ID!
+    name: String!
+   }
+   
+
   type User {
     _id: ID
     firstName: String
@@ -50,6 +56,13 @@ const typeDefs = `
     addUser(firstName: String!, lastName: String!, email: String!, password: String!): Auth
     updateUser(firstName: String, lastName: String, email: String, password: String): User
     login(email: String!, password: String!): Auth
+    processDonation(amount: Float!, shelterId: ID!): Donation
+  }
+  
+  type Donation {
+   id: ID!
+   amount: Float!
+   shelterId: ID!
   }
 `;
 
