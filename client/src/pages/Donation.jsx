@@ -70,52 +70,52 @@ const Donation = () => {
         </div>
       </form>
  
- <h2> Berkeley Humane </h2>
+ <h2><a href="https://www.berkeleyhumane.org">Berkeley Humane</a></h2>
  <p>
   Location - 2700 Ninth St, Berkeley, CA 94710 <br />
   Phone Number - 510.845.7735
  </p>
- <h2> Central California SPCA </h2>
+ <h2><a href="https://www.ccspca.com">Central California SPCA</a></h2>
  <p>
   Location - 103 S Hughes Ave, Fresno, CA 93706 <br />
   Phone Number - 559.233.7722
  </p>
- <h2> Friends of the Alameda Aniaml Shelter </h2>
+ <h2><a href="https://www.alamedaanimalshelter.org"> Friends of Alameda Animal Shelter</a></h2>
  <p>
   Location - 1590 Frontmann Way, Alameda, CA 94501 <br />
   Phone Number - 510.337.8565
  </p>
- <h2> Front Street Animal Shelter </h2>
+ <h2> <a href="https://www.cityofsacramento.org/Community-Development/Animal-Care">Front Street Animal Shelter</a></h2>
  <p>
   Location - 2127 Front St, Sacramento, CA 95818 <br />
   Phone Number - 916.808.7387
  </p>
- <h2> Happy Tails Pet Sanctuary </h2>
+ <h2><a href="https://www.happytails.org">Happy Tails Pet Sanctuary</a></h2>
  <p>
   Location - 6001 Folsom Blvd, Sacrament, CA 95819 <br />
   Phone Number - 916.556.1155
  </p>
- <h2> Humane Society Silicon Valley </h2>
+ <h2><a href="https://www.hssv.org">Humane Society Silicon Valley</a></h2>
  <p>
   Location - 901 Ames Ave, Milpitas, CA 95035<br />
   Phone Number - 408.262.2133
  </p>
- <h2> Humane Soceity of Truckee-Tahoe South </h2>
+ <h2><a href="https://hstt.org/">Humane Society Truckee Tahoe South</a> </h2>
  <p>
   Location - 3438 Lake Tahoe Blvd, South Lake Tahoe, CA 96150 <br />
   Phone Number - 530.542.2857
  </p>
- <h2> Placer County SPCA </h2>
+ <h2><a href="https://placerspca.org">Placer County SPCA</a></h2>
  <p>
   Location - 200 Tahoe Ave, Roseville, CA 95678 <br />
   Phone Number - 916.782.7722
  </p>
- <h2> Sacramento SPCA </h2>
+ <h2><a href="https://www.sspca.org">Sacramento SPCA</a></h2>
  <p>
   Location - 6201 Florin Perkins Rd, Sacramento, CA 95828<br />
   Phone Number - 916.383.7387
  </p>
- <h2> San Francisco SPCA Adoption Center </h2>
+ <h2><a href="https://www.sfspca.org/adoptions/">San Francisco SPCA Adoption Center</a></h2>
  <p>
   Location - 250 Florida St, San Francisco, CA 94103 <br />
   Phone Number - 415.522.3500
