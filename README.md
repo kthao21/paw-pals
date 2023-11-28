@@ -24,6 +24,11 @@ PawPals stands as a comprehensive online platform, crafted to serve as your ulti
 As a user, I would like an application where I can view pets, create an account, and sign in to see animals in my area that are up for adoption. 
 
 # Screenshots 
+![donate](client/public/images/PawPalsDonate.png)
+
+![signup](client/public/images/PawPalsSignup.png)
+
+![login](client/public/images/PawPalsLogin.png)
 
 # Credits
 
