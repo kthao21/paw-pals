@@ -1,7 +1,8 @@
-const { User, Donate, Category, Order } = require("../models");
+const { User, Donation, Category} = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
+require ("dotenv").config()
 const stripe = require("stripe")(
-  "sk_test_51MmUhiJWBUm8M1eN7zGH87OtGnQPi1BiZMFgpcHzpEQa86sUDL0pGs6mV9fuddjdJrEImyvK5tJCqexf4DBJOo5000BOOUZLm7"
+  process.env.STRIPE_SECRET_KEY
 );
 
 const resolvers = {
@@ -27,7 +28,38 @@ const resolvers = {
     donation: async (parent, { _id }) => {
       return await Donation.findById(_id).populate("category");
     },
-    
+    checkout: async (parent, args, context) => {
+      const url = new URL(context.headers.referer).origin;
+      const donation = new Donation({ amount: args.amount, shelterID: args.shelterID });
+      const line_items = [];
+
+
+        const product = await stripe.products.create({
+          name: "Shelter Donation",
+          description: `Donation to Shelter ID ${args.shelterID}`,
+        });
+
+        const price = await stripe.prices.create({
+          product: product.id,
+          unit_amount: args.amount,
+          currency: "usd",
+        });
+
+        line_items.push({
+          price: price.id,
+          quantity: 1,
+        });
+
+      const session = await stripe.checkout.sessions.create({
+        payment_method_types: ["card"],
+        line_items,
+        mode: "payment",
+        success_url: `${url}/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `${url}/`,
+      });
+
+      return { session: session.id };
+    },
   },
   Mutation: {
     addUser: async (parent, args) => {
