@@ -2,12 +2,15 @@ import CategoryMenu from "../components/CategoryMenu";
 import Nav from "../components/Nav";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
+import photo from '../assets/images/photo1.png';
+import Carousel from 'react-bootstrap/Carousel';
+import photoTwo from '../assets/images/photo2.png';
 
 const Home = () => {
   return (
     <div className="grid">
       <aside className="sidebar">
-        <h3>Random</h3>
+        <h3>Find your match today!</h3>
       </aside>
       <div className="aboutUs">
         <h2>About Us</h2>
@@ -23,7 +26,6 @@ const Home = () => {
           bulk of the card's content.
         </Card.Text>
         <Button variant="primary" className='favorites'>View Pet</Button>
-        <Button variant="primary" className='favorites'>Add to Favorites</Button>
       </Card.Body>
     </Card>
     </div>
