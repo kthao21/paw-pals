@@ -1,7 +1,7 @@
 import ReactDOM from 'react-dom/client'
 import './index.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
-
+import Success from "./pages/Success.jsx"
 import App from './App.jsx';
 import Home from './pages/Home';
 import Donation from './pages/Donation';
@@ -37,6 +37,10 @@ const router = createBrowserRouter([
       {
         path: '/savedSearches',
         element: <SavedSearches />
+      },
+      {
+        path: '/success',
+        element: <Success />
       }
     ]
   }

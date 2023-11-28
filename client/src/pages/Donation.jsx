@@ -1,6 +1,14 @@
-import React, { useState } from 'react';
-import { useMutation } from '@apollo/client'; 
-import { PROCESS_DONATION } from '../utils/mutations'; // Replace with actual mutation
+import { useEffect,useState } from "react";
+import { loadStripe } from "@stripe/stripe-js";
+import { useLazyQuery } from "@apollo/client";
+import { QUERY_CHECKOUT } from "../utils/queries";
+// import React, { useState } from 'react';
+// import { useMutation } from '@apollo/client'; 
+// import { PROCESS_DONATION } from '../utils/mutations'; // Replace with actual mutation
+const stripePromise = loadStripe(
+  
+  "pk_test_51OHHd6HwQxiU7xTHVUdQJ5Cy8dpfPRpB6G4frsvTbDGbZdMwNGvjZF7V9Uz0zNfFIlkwqrmkCqqNwGDz1rf3kQog00kwWLcdLe"
+);
 
 const Donation = () => {
   const [donationAmount, setDonationAmount] = useState('');
@@ -18,7 +26,15 @@ const Donation = () => {
     { id: '10', name: 'San Francisco SPCA Adoption Center' },
    ]);
 
-  const [processDonation, { error }] = useMutation(PROCESS_DONATION); //  replace with actual mutation
+  const [getCheckout, { error, data }] = useLazyQuery(QUERY_CHECKOUT);
+  useEffect(() => {
+    if (data) {
+      stripePromise.then((res) => {
+        console.log ("got checkout")
+        res.redirectToCheckout({ sessionId: data.checkout.session });
+      });
+    }
+  }, [data]);
 
   const handleInputChange = (event) => {
     setDonationAmount(event.target.value);
@@ -31,7 +47,9 @@ const Donation = () => {
   const handleSubmit = async (event) => {
     event.preventDefault();
     // Process the donation here, e.g., call mutation or another function
- await processDonation({ variables: { amount: donationAmount, shelterId } });
+    getCheckout({
+      variables: {amount: parseFloat(donationAmount), shelterId: shelterId},
+    });
     console.log('Donation submitted:', donationAmount);
   };
 
@@ -64,7 +82,7 @@ const Donation = () => {
          </select>
        </div>
         {/* error */}
-        {error && <p className="error-text">Error processing donation</p>}
+        {error && <p className="error-text">Error processing donation: {console.log(error)}</p>}
         <div className="flex-row flex-end">
           <button type="submit">Donate</button>
         </div>

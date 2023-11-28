@@ -16,12 +16,11 @@ const typeDefs = `
     category: Category
   }
 
-  type Donate {
-    _id: ID
-    donateDate: String
-    donateAmount: Float
-    donateMessage: String
-  }
+  type Donation {
+    id: ID!
+    amount: Float!
+    shelterId: ID!
+   }
 
   type Shelter {
     id: ID!
@@ -48,8 +47,8 @@ const typeDefs = `
   type Query {
     categories: [Category]
     user: User
-    checkout(donate: [ID]!): Checkout
-    donation(_id: ID!): Donate
+    donation(_id: ID!): Donation
+    checkout (amount: Float, shelterId: ID): Checkout
   }
 
   type Mutation {
@@ -59,11 +58,7 @@ const typeDefs = `
     processDonation(amount: Float!, shelterId: ID!): Donation
   }
   
-  type Donation {
-   id: ID!
-   amount: Float!
-   shelterId: ID!
-  }
+ 
 `;
 
 module.exports = typeDefs;
