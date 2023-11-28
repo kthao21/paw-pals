@@ -3,7 +3,6 @@ import Nav from "../components/Nav";
 import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import photo from '../assets/images/photo1.png';
-import Carousel from 'react-bootstrap/Carousel';
 import photoTwo from '../assets/images/photo2.png';
 
 const Home = () => {
@@ -11,6 +10,9 @@ const Home = () => {
     <div className="grid">
       <aside className="sidebar">
         <h3>Find your match today!</h3>
+        <img src={photo}/>
+        <p>"She's the best dog anyone could ever ask for. We couldn't be any happier!" -Kathy</p>
+        <img src={photoTwo}/>
       </aside>
       <div className="aboutUs">
         <h2>About Us</h2>

@@ -49,6 +49,8 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  background-color: var(--light);
+  border-radius: 20px;
 }
 
 h3 {
@@ -93,6 +95,7 @@ header {
 
 header a {
   color: var(--primary);
+  font-size: 20px;
 }
 
 button {
@@ -390,6 +393,7 @@ ul {
   height: 50px;
   border: 2px solid black;
   border-radius: 10px;
+}
   
 aside {
   font-family: 'Oswald';
