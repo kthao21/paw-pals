@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
-import { useMutation } from '@apollo/client'; // 
+import { useMutation } from '@apollo/client';
+import logo from '../assets/images/pawpals.png';
+// 
 
 // Replace with actual mutation
 import { SEND_CONTACT_MESSAGE } from '../utils/mutations';
@@ -30,13 +32,16 @@ const Contact = () => {
   };
 
   return (
-    <div className="container my-1">
-      <h2>Contact Us</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="flex-row space-between my-2">
+    <div className="contact-form">
+      <div className='contact-card'>
+      <img src={logo} alt="logo" className='contact-logo' />
+      <h2 className='contact-title'>Contact Us!</h2>
+      <form onSubmit={handleSubmit} className='form-submit'>
+        <div className="name-section">
           <label htmlFor="name">Name:</label>
           <input
-            placeholder="Your Name"
+            className='input-name'
+            placeholder="Your Name:"
             name="name"
             type="text"
             id="name"
@@ -44,9 +49,10 @@ const Contact = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div className="email-section">
           <label htmlFor="email">Email address:</label>
           <input
+            className='input-email'
             placeholder="youremail@test.com"
             name="email"
             type="email"
@@ -55,23 +61,26 @@ const Contact = () => {
             onChange={handleInputChange}
           />
         </div>
-        <div className="flex-row space-between my-2">
+        <div className="message-section">
           <label htmlFor="message">Message:</label>
           <textarea
-            placeholder="Your message"
+            className='input-message'
+            placeholder="Your message here..."
             name="message"
             id="message"
             rows="5"
+            cols="30"
             value={contactState.message}
             onChange={handleInputChange}
           />
         </div>
         {/* error */}
         {error && <p className="error-text">Error sending message</p>}
-        <div className="flex-row flex-end">
-          <button type="submit">Send Message</button>
+        <div className="center-button">
+          <button type="submit" className='button-submit'>Send Message</button>
         </div>
       </form>
+      </div>
     </div>
   );
 };
