@@ -8,12 +8,6 @@ const animalSchema = new Schema({
     required: true,
     trim: true
   },
-  breed: {
-    type: String
-  },
-  color: {
-    type: String
-  },
   image: {
     type: String
   },
