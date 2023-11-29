@@ -57,3 +57,18 @@ mutation sendContactMessage($name: String!, $email: String!, $message: String!) 
   }
 }
 `;
+
+export const UPDATE_CATEGORIES = gql`
+mutation upateCategories($categories: [ID]!) {
+updateCategories(categories: $categories) {
+_id
+  }
+}
+`;
+
+export const UPDATE_CURRENT_CATEGORY = gql`
+mutation updateCurrentCategory($name: String!){
+updateCurrentCategory(name: $name)
+@client
+}
+`;
