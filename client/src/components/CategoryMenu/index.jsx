@@ -28,6 +28,7 @@ function CategoryMenu() {
       data.categories.forEach((category) => {
         idbPromise('categories', 'put', category);
       });
+
     } else if (!loading) {
       idbPromise('categories', 'get').then((categories) => {
         dispatch({
@@ -50,7 +51,9 @@ function CategoryMenu() {
   return (
     <div className="category">
       <h2>Choose a Category</h2>
-      {categories.map((item) => (
+      {categories && categories.map((item) => {
+        console.log(item)
+        return (
         <button
           key={item._id}
           onClick={() => {
@@ -59,7 +62,7 @@ function CategoryMenu() {
         >
           {item.name}
         </button>
-      ))}
+      )})}
       <button
         onClick={() => {
           handleClick('');

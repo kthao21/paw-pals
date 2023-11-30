@@ -7,11 +7,8 @@ const typeDefs = `
   type Animal {
     _id: ID
     name: String
-    color: String
     image: String
     gender: String
-    breed: String 
-    size: String 
     age: Float
     category: Category
   }
@@ -49,7 +46,8 @@ const typeDefs = `
     categories: [Category]
     user: User
     donation(_id: ID!): Donation
-    checkout (amount: Float, shelterId: ID): Checkout
+    checkout (amount: Float, shelterId: ID): Checkout,
+    getAnimals: [Animal]
   }
 
   type Mutation {

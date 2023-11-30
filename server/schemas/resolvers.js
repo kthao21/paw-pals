@@ -1,4 +1,4 @@
-const { User, Donation, Category} = require("../models");
+const { User, Donation, Category, Animal } = require("../models");
 const { signToken, AuthenticationError } = require("../utils/auth");
 require ("dotenv").config()
 const stripe = require("stripe")(
@@ -60,6 +60,11 @@ const resolvers = {
 
       return { session: session.id };
     },
+    getAnimals: async (parent, args) => {
+      const animal = await Animal.find()
+      console.log(animal)
+      return animal
+    }
   },
   Mutation: {
     addUser: async (parent, args) => {
