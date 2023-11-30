@@ -24,14 +24,15 @@ function CategoryMenu() {
       categoryData.categories.forEach((category) => {
         idbPromise('categories', 'put', category);
       });
-    } else if (!loading) {
-      idbPromise('categories', 'get').then((categories) => {
-        dispatch({
-          type: UPDATE_CATEGORIES,
-          categories: categories,
-        });
-      });
-    }
+    } 
+    // else if (!loading) {
+    //   idbPromise('categories', 'get').then((categories) => {
+    //     dispatch({
+    //       type: UPDATE_CATEGORIES,
+    //       categories: categories,
+    //     });
+    //   });
+    // }
   }, [categoryData, loading, dispatch]);
 
   const handleClick = (id) => {
@@ -44,7 +45,9 @@ function CategoryMenu() {
   return (
     <div className="category">
       <h2>Choose a Category</h2>
-      {categories.map((item) => (
+      {categories && categories.map((item) => {
+        console.log(item)
+        return (
         <button
           key={item._id}
           onClick={() => {
@@ -53,7 +56,7 @@ function CategoryMenu() {
         >
           {item.name}
         </button>
-      ))}
+      )})}
       <button
         onClick={() => {
           handleClick('');

@@ -68,3 +68,19 @@ export const QUERY_USER = gql`
     }
   }
 `;
+
+export const GET_ANIMALS = gql`
+query GetAnimals {
+  getAnimals {
+    _id
+    age
+    category {
+      _id
+      name
+    }
+    gender
+    image
+    name
+  }
+}
+`;
