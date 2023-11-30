@@ -28,6 +28,7 @@ const Home = () => {
         <p>Paw Pals is an online, searchable database of animals who are in need of a home. Our mission is to increase awareness of the pets that are available for adoption in your local area. We strongly believe that every pet deserves a second chance. Adoption isn't the only way you can make an impact. See our Donate Page to view a list of local shelters you can volunteer or make a donation at.</p>
       </div>
       <CategoryMenu />
+
       {
         data&&data.getAnimals.map(animal => {
           if(currentCategory === ""){

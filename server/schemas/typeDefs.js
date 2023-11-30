@@ -42,6 +42,7 @@ const typeDefs = `
   }
 
   type Query {
+    animals: [Animal]
     categories: [Category]
     user: User
     donation(_id: ID!): Donation

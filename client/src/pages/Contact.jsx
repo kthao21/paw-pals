@@ -35,7 +35,7 @@ const Contact = () => {
     <div className="contact-form">
       <div className='contact-card'>
       <img src={logo} alt="logo" className='contact-logo' />
-      <h2 className='contact-title'>Contact Us!</h2>
+      <h1 className='contact-title'>Contact Us!</h1>
       <form onSubmit={handleSubmit} className='form-submit'>
         <div className="name-section">
           <label htmlFor="name">Name:</label>
